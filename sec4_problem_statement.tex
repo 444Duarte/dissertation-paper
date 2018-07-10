@@ -1,0 +1,34 @@
+\section{Problem Statement}
+
+As stated before in previous sections, not only is expected for the number of IoT
+devices to grow immensely, both commercially and industrially, but there are
+already many solutions that allow for serverless functions to be executed
+remotely. Due to the nature of serverless functions, some of them could perfectly
+be executed locally, using the joint processing power of the multiple IoT devices.
+The hardship comes with using this power efficiently, having multiple serverless
+functions, and knowing where to execute each one, locally or remotely. It is not
+feasible for each developer to manually analyze performance across the different
+runtime environments and make a decision where the function should be executed.
+This is impeding the adoption of these concepts in IoT, despite the interest and
+potential that exists in this evergrowing area. Not only there is a lack of
+systems making use of serverless on-premises, the majority of the developers in
+IoT opt for using the cloud for each and every need, disregarding the power that
+exists locally.
+
+Like what was presented above, there is a lack of practical know-how knowledge
+available despite there being lots of incentives for it. There are lots of things,
+but it is not easy to start developing a serverless IoT solution.
+
+Given this, the aim of this project is to create an architecture for serverless IoT
+platform and to build a proof of concept using existing open-source tools when
+possible and avoiding proprietary solutions. The platform should:
+\begin{itemize}
+    \item Have a serverless cloud solution capable of answering HTTP requests from
+        the \textit{things}.
+    \item Make use of the local processing power of the multiple IoT devices to
+        create a serverless virtual processing unit on the Fog Layer to answer local requests.
+    \item Have multiple IoT devices with different functions capable of
+        interacting with both the Cloud and Fog layer to execute different functions. 
+\end{itemize}
+
+

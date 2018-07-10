@@ -1,0 +1,82 @@
+\section{Conclusion}
+The experimentation and results presented in this paper go in accordance to
+those expected and satisfy the proposed use cases in \ref{overview:usecases}. The
+developed solution is capable of analyzing the knowledge it has over the ecosystem
+and will make a decision that will lead to a faster execution time and at the
+same time explore different options that might lead to better results.
+Additionally, the developed solution is also capable of detecting failures in the
+remote execution of the serverless function and solve that problem, executing the
+function locally and answering the request successfully.
+
+In sum, the proposed solution proved to be capable of answering the demanded use
+cases and the used approach was fruitful. Nonetheless, there are limitations and
+some questions that this approach cannot answer.
+Despite the fact that the proposed solution already reaches a level that is very
+beneficial for most of the practical applications, further development must be
+made to reach a more compelling solution.
+
+Within the fields surrounding this work, there is a lot of uncharted
+territory and unknown aspects. The choice between a serverless architecture and a
+monolithic one is still not clear in all cases and adding these concepts and
+infusing it with IoT and Fog Computing is a very new area. Because of this, the
+principal contributions of this work were:
+
+\begin{itemize}
+    \item Innovative approach to the mix of IoT, fog computing and serverless. There is not much work in this mix of fields and this approach is both innovative
+        and unseen.
+
+    \item Enabling serverless both locally and remotely. The developer creating the serverless functions no longer has to actively choose where to deploy the functions, it is possible to automate that process and still keep total
+        regret at a minimum.
+
+    \item The ability to run serverless functions locally even if the connection to the server fails and improvement of fault-tolerance in systems.
+
+    \item Gathering of existing knowledge, tools, and platforms suitable for developing solutions in the areas of IoT, serverless and fog computing.
+
+    \item Development of a functional prototype built on top of widely used and mature solutions that can serve as inspiration for future and better solutions.
+\end{itemize}
+
+All the code and work made is openly available at \url{https://github.com/444Duarte/serverless-iot} .
+
+% \subsection{Main Dificulties}
+% During development of this solution, some problems occurred that caused some distress and
+% troubled the overall solution.
+
+% \begin{itemize}
+% \item This fusion of different areas like IoT, fog computing and serverless is new
+%     and there is no clear path or approach. The uncertainty in what path to follow
+%     led to some mistakes and to a slower pace sometimes.
+
+% \item Not many, but some of the tools used to develop the functional prototype are
+%     also recent and poorly documented which made it harder to build the functional
+%     prototype.
+
+% \item Adapting the exploration vs exploitation algorithms to our problem. The
+%     algorithms aim to maximize and the purpose was to minimize the cost
+
+% \item There were not enough resources to develop a proper local network of IoT
+%     devices and to create a truly authentic ecosystem that would better simulate
+%     a real-life environment.
+
+% \end{itemize}
+
+
+\subsection{Future Work}
+Despite the efforts made, there are still many improvements that could be made to
+the developed work:
+
+\begin{itemize}
+    \item Stateful - Introducing statefulness and consistency across serverless
+        different runtime environments is definitely a challenge but the end result would be of utmost usefulness and importance.
+    \item Analysis of other metrics other than time (e.g. energy consumption, CPU
+        cycles, memory usage, network usage) - The time taken is not the only metric that is important when choosing where to execute a serverless function. Analyzing the impact of other metrics would also be applicable in other different contexts and is something to take into consideration.
+        A solution mixing different points of view that analyzed different metrics to choose the overall best result is also a possibility that would be of great use.
+    \item Static analysis to verify the complexity of the function - A static analysis
+        of the function could largely improve the exploration vs exploitation problem, allowing the system to start with some knowledge about the complexity of the function, diminishing the total regret.
+    \item Integrate metrics with Prometheus - This is a practical quality of life
+        improvement and only regards the technical implementation but would simplify the analysis process.
+    \item Replace the functional prototype with a viable real-life solution that
+        could augment serverless development - A viable real solution would
+        certainly, be appreciated would deeply impact the field and advance
+        both research in these areas but also the development of real applications
+        that took advantage of these concepts and technologies.
+\end{itemize}

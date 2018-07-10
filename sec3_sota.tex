@@ -1,0 +1,24 @@
+\section{State of the Art}
+
+\subsection{Exploration vs Exploitation and Multi-Armed Bandit} \label{sec:sota_mab}
+Exploration vs Exploitation is a common decision making dilemma, both in real life
+and in the computer world. Choosing between a known good option or taking the risk
+of trying an unknown option in the hope of finding a best result is a choice that
+we try to balance in the hope of minimizing the total regret(total opportunity
+lossi\cite{kn:Silver}) we face.
+
+If we had access to all the information about the universe in question, we could
+either brute-force or use other smart approaches to achieve the best results. In
+this situation, the problem comes from only having \textit{incomplete}
+information. In order to make the best overall decisions, we need to
+simultaneously gather enough about the system and keep the total regret at a
+minimum. Exploitation will choose the best known option in order to avoid any
+regret. Exploration will take the risk of choosing one of the less explored
+options with the purpose of gathering more information about the universe in
+question, reducing short-term success for long-term success. A good strategy will
+use both options, exploration and exploitation, to achieve the best results.
+
+The Multi-Armed Bandit is a known problem that exemplifies the Exploration vs
+Exploitation dilemma. The problem places us with multiple slot machines, each with
+a different reward probability. Given the setting, the objective is to find
+\textit{the best strategy to achieve the highest long-term reward}\cite{kn:Weng2018}.

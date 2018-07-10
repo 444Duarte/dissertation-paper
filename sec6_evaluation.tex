@@ -100,8 +100,11 @@ the weighting algorithm used was the Bayesian UCB. As it can be seen in the List
 \ref{listing:exp_weight_query}, the runtime environment that is going to be
 chosen is the Frankfurt's server.
 
-\begin{listing}
-\begin{lstlisting}[language=json, basicstyle=\footnotesize]
+\begin{lstlisting}[
+    language=json,
+    basicstyle=\footnotesize,
+    caption= {Weights of the different servers, for the second experience, using the Bayesian UCB algorithm.},
+    label=listing:exp_weight_query]
 {
     "status": "success",
     "londonServer": 3.5747403999957266,
@@ -109,9 +112,6 @@ chosen is the Frankfurt's server.
     "local": 2.090245031544607
 }
 \end{lstlisting}
-\caption{}
-\label{listing:exp_weight_query}
-\end{listing}
 
 Even though the chosen runtime environment was Frankfurt's server, because there
 was no internet connection it had to fall back to execute the function locally in
@@ -119,9 +119,14 @@ order to complete the request successfully, as seen in Listing
 \ref{listing:exp_fallback_result}. The observed results match the ones expected
 and also the proxy proceeded as stated in use case \ref{usecases:fallback}.
 
-\begin{listing}
-
-\begin{lstlisting}[language=json, basicstyle=\footnotesize]
+\begin{lstlisting}[
+    language=json,
+    basicstyle=\footnotesize,
+    caption= {The request was executed locally, as indicated by the key \textit{swarm},
+which is the swarm (runtime environment) where the function was executed.
+\textit{local}, is the name given to the local network of devices, as configured
+when setting up the proxy.},
+    label=listing:exp_fallback_result]
 {
     "nodeInfo": "61e20a65b48e ",
     "swarm": "local",
@@ -130,13 +135,6 @@ and also the proxy proceeded as stated in use case \ref{usecases:fallback}.
     "status": "The light is ON"
 }
 \end{lstlisting}
-\caption{The request was executed locally, as indicated by the key \textit{swarm},
-which is the swarm (runtime environment) where the function was executed.
-\textit{local}, is the name given to the local network of devices, as configured
-when setting up the proxy.}
-\label{listing:exp_fallback_result}
-
-\end{listing}
 
 
 \subsection{Third Experiment: Turning off Internet connection in a series of requests}

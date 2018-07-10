@@ -76,11 +76,11 @@
 % Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
 % compilation based on whether the output is pdf or dvi.
 % usage:
-% \ifpdf
-%   % pdf code
-% \else
-%   % dvi code
-% \fi
+ %\ifpdf
+   %% pdf code
+ %\else
+   %% dvi code
+ %\fi
 % The latest version of ifpdf.sty can be obtained from:
 % http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
 % Also, note that IEEEtran.cls V1.7 and later provides a builtin
@@ -325,6 +325,37 @@
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 
+\lstset{ %
+ language=C,                        % choose the language of the code
+ basicstyle=\footnotesize\ttfamily,
+ keywordstyle=\bfseries,
+ numbers=left,                      % where to put the line-numbers
+ numberstyle=\scriptsize\texttt,    % the size of the fonts that are used for the line-numbers
+ stepnumber=1,                      % the step between two line-numbers. If it's 1 each line will be numbered
+ numbersep=8pt,                     % how far the line-numbers are from the code
+ frame=tb,
+ float=htb,
+ aboveskip=8mm,
+ belowskip=4mm,
+ backgroundcolor=\color{cloudwhite},
+ showspaces=false,                  % show spaces adding particular underscores
+ showstringspaces=false,            % underline spaces within strings
+ showtabs=false,                    % show tabs within strings adding particular underscores
+ tabsize=2,	                    % sets default tabsize to 2 spaces
+ captionpos=b,                      % sets the caption-position to bottom
+ breaklines=true,                   % sets automatic line breaking
+ breakatwhitespace=false,           % sets if automatic breaks should only happen at whitespace
+ escapeinside={\%*}{*)},            % if you want to add a comment within your code
+ morekeywords={*,var,template,new}  % if you want to add more keywords to the set
+}
+
+\makeatletter
+\def\lst@makecaption{%
+    \def\@captype{figure}%
+  \@makecaption
+}
+\makeatother
+
 \colorlet{punct}{red!60!black}
 \definecolor{background}{HTML}{EEEEEE}
 \definecolor{delim}{RGB}{20,105,176}
@@ -500,8 +531,6 @@ The authors would like to thank...
 %  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
 
 %\end{thebibliography}
-
-
 
 
 % that's all folks

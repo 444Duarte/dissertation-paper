@@ -384,17 +384,12 @@ DEI - Faculty of Engineering,\\ University of Porto\\ Porto, Portugal}}
 % in the abstract
 \begin{abstract}
 The IoT area has grown significantly in the last few years and is expected to
-reach a gigantic amount of 50 billion devices by 2020\nocite{kn:Cisco01}. Parallel
-to IoT, serverless architectures, specifically highlighting \textit{FaaS}, are
-also an increasing trend in the field of software engineering. Combining IoT with
-a serverless architectural design can be effective when trying to make use of the
-local processing power that exist in a local network of IoT devices and creating a
-fog layer that leverages compotational capabilities that are closer to the
-end-user. The proposed solution, which is placed between the device and the
-serverless function, when a device requests for the execution of a serverless
-function, will decide based on previous metrics of execution if the serverless
-function should be executed locally, in the fog layer of a local network of IoT
-devices, or if it should be executed remotely, in one of the many cloud servers.
+reach a gigantic amount of 50 billion devices by 2020\nocite{kn:Cisco01}. The appearance of serverless architectures, specifically highlighting \textit{FaaS}, raises the question of the suitability of using such in IoT environments. Combining IoT with a serverless architectural design can be effective when trying to make use of the
+local processing power that exists in a local network of IoT devices and creating a
+fog layer that leverages computational capabilities that are closer to the
+end-user. In this approach, which is placed between the device and the
+serverless function, when a device requests for the execution of a serverless function will decide based on previous metrics of execution if the serverless function should be executed locally, in the fog layer of a local network of IoT
+devices, or if it should be executed remotely, in one of the available cloud servers. Therefore, this approach allows to dynamically allocating functions to the most suitable layer.
 
 %The solution makes this decision with the aim of improving response times, by
 %taking advantage of the joint processing power of the local network of IoT devices
@@ -428,22 +423,22 @@ communications, overall traffic demand might reach $\displaystyle 11 * 10^9$ Gb 
 month\cite{kn:Dehos2014} \cite{kn:Baresi2017}. To compute such a big amount of
 data, cloud computing would appear to be the obvious solution but there are cases
 where the latency that comes with transmitting data back and forth might be
-undesired. In certain situations it is also not feasible to expect a constant and
-reliable internet connection to an always on server, either because it might not
+undesired. In certain situations, it is also not feasible to expect a constant and
+reliable internet connection to an always-on server, either because it might not
 be economically wise or because it might not be infrastructurally possible. In
 order to solve the need for low latency, as well as to improve fault tolerance, by
-not relying on an always on centralized server, serverless architectures and fog
+not relying on an always-on centralized server, serverless architectures and fog
 computing aim to reduce the dependency on the cloud by making more use of the
 local resources of a device and improving communication between local devices,
-only leaving the data intensive tasks to the cloud\cite{kn:Baresi2017}. With the
+only leaving the data-intensive tasks to the cloud\cite{kn:Baresi2017}. With the
 increasing trend in serverless solutions, such as AWS Lambda, it is opportunistic
-to implement this concepts in IoT.
+to implement these concepts in IoT.
 
 Although IoT has been around for a few years already, the same cannot be said
 about services that provide cloud solutions and cloud infrastructure for rent. 
 Likewise, when Serverless and Fog Computing solutions first appeared their
 usefulness and benefits for the IoT ecosystem was obvious and developers began to
-mix them together in order to get the most out of these new trend.
+mix them together in order to get the most out of this new trend.
 
 Despite its success and the promising future for the mix of this concepts, the
 area is still fairly new and few solutions can take advantage of the processing
@@ -454,7 +449,7 @@ serverless functions are suitable to run on low-end devices. To choose where eac
 serverless functions should be executed (locally or in the cloud) is a manual task
 and the end result is that developers choose to have all serverless functions
 running in the cloud as it is easier to manage and less risky. Nonetheless, there
-is a lot of potiential processing power dormant in each local network that could
+is a lot of potential processing power dormant in each local network that could
 be used to improve response times, improve fault-tolerance,  and to slash costs of
 hosting cloud processing infrastructure. 
 
@@ -463,9 +458,7 @@ hosting cloud processing infrastructure.
 \subsection{Internet of Things}\label{sec:dialecto}
 The \textit{Internet of Things} is a term given to the network of ever increasing
 number of mundane objects with embedded systems, that allows them to interact with
-each other or with someone remotely. This network creates a more smart and self-regulated
-environment that depends less on the input of a physical entity and more on the
-input of other \textit{things}, thus removes unnecessary steps and frees the user
+each other or with someone remotely. This network creates a more smart and self-regulated environment that depends less on the input of a physical entity and more on the input of other \textit{things}, thus removes unnecessary steps and frees the user
 of dealing with mundane tasks.
 
 \subsection{Serverless}
@@ -477,9 +470,7 @@ control over the application code \cite{kn:Baldini}.
 
 "The term ‘Serverless’ is confusing since with such applications there are both
 server hardware and server processes running somewhere, but the difference to
-normal approaches is that the organization building and supporting a ‘Serverless’
-application is not looking after the hardware or the processes - they are
-outsourcing this to a vendor." 
+normal approaches are that the organization building and supporting a ‘Serverless’ application is not looking after the hardware or the processes - they are outsourcing this to a vendor." 
 
 \hfill Mike Roberts
 
@@ -498,8 +489,7 @@ order to provide computing power, storage, and networking services. Although
 conceptually located in between the two layers, in practice, this platform is located at the
 edge of the network \cite{kn:Bonomi}. "This paradigm supports vertically-isolated,
 latency-sensitive applications by providing ubiquitous, scalable, layered,
-federated, and distributed computing, storage, and network connectivity"
-\citep{kn:Iorga2017}. 
+federated, and distributed computing, storage, and network connectivity"~\cite{kn:Iorga2017}. 
 
 \section{State of the Art}
 
@@ -508,7 +498,7 @@ Talvez falar do problema de Exploration vs exploitation?
 \section{Problem Statement}
 
 As stated before in previous sections, not only is expected for the number of IoT
-devices to grow imensely, both commercially and industrially, but there are
+devices to grow immensely, both commercially and industrially, but there are
 already many solutions that allow for serverless functions to be executed
 remotely. Due to the nature of serverless functions, some of them could perfectly
 be executed locally, using the joint processing power of the multiple IoT devices.
@@ -516,7 +506,7 @@ The hardship comes with using this power efficiently, having multiple serverless
 functions, and knowing where to execute each one, locally or remotely. It is not
 feasible for each developer to manually analyze performance across the different
 runtime environments and make a decision where the function should be executed.
-This is impending the adoption of these concepts in IoT, despite the interest and
+This is impeding the adoption of these concepts in IoT, despite the interest and
 potential that exists in this evergrowing area. Not only there is a lack of
 systems making use of serverless on-premises, the majority of the developers in
 IoT opt for using the cloud for each and every need, disregarding the power that
@@ -533,37 +523,31 @@ possible and avoiding proprietary solutions. The platform should:
     \item Have a serverless cloud solution capable of answering HTTP requests from
         the \textit{things}.
     \item Make use of the local processing power of the multiple IoT devices to
-        create a serverless virtual processing unit on the Fog Layer to answer
-        local requests.
+        create a serverless virtual processing unit on the Fog Layer to answer local requests.
     \item Have multiple IoT devices with different functions capable of
-        interacting with both the Cloud and Fog layer to execute different
-        functions. 
+        interacting with both the Cloud and Fog layer to execute different functions. 
 \end{itemize}
 
 \section{Proposed Solution}
 
-This project tries to fix the problem stated in Chapter \ref{chap:thesis_state} by
+This project tries to fix the aforementioned problem by
 introducing a proxy between the entity requesting the function execution and the
 serverless function. This proxy will analyze each function's past history, by
 looking at the time taken in past requests and make the decision of which runtime
-environment \footnote{Runtime environment is the system where the serverless
-function will be executed, i.e., local network or one of the servers available in
-the cloud} should the request be forwarded to, see Figure
+environment \footnote{Runtime environment is the system where the serverless function will be executed, i.e., local network or one of the servers available in the cloud} should the request be forwarded to, see Figure
 \ref{fig:request_func_high_level_diagram}. The proxy should be able to decide
 between the local network of devices and one of the many available servers.
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.5\textwidth]{diss-high-level-diagram.png}
-  \caption{High level overview of project's architechture}
+  \caption{High level overview of project's architecture.}
   \label{fig:request_func_high_level_diagram}
 \end{figure}
 
 In order to improve fault-tolerance, in case of no Internet connection or if
-one the servers is not available, if the request to the server fails, the proxy
-should fallback to the local network. This way, even if the request to execute the
-function is forwarded to the server and fails, the function will still be executed
-locally.
+one of the servers is not available if the request to the server fails, the proxy
+should fallback to the local network. This way, even if the request to execute the function is forwarded to the server and fails, the function will still be executed locally.
 
 The proxy is situated inside the local network of IoT devices and will forward the
 request for a specific function to a gateway which forwards the function execution to
@@ -581,7 +565,7 @@ metrics of the time taken for the runtime environment to execute the function
 
 \subsubsection{Forward function execution to the cloud} \label{usecases:forward_cloud}
 
-The use case in Figure \ref{fig:succ-cloud-deploy} examplifies a situation where
+The use case in Figure \ref{fig:succ-cloud-deploy} exemplifies a situation where
 the requested serverless function is hardware intensive, therefore taking a lot of
 time to execute locally. Due to the high processing power of the cloud servers, it
 is beneficial to forward the execution request to one of the cloud servers, even
@@ -591,10 +575,7 @@ will opt for the one that is physically nearest (lower latency).
 \begin{figure}[ht]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{diss-succ-cloud-deploy.png}
-    \caption{Request for the execution of a demanding function to be executed. The
-    proxy will forward the request to the cloud because due to the high processing
-    power of the cloud server, the function will be executed more quickly. The nearest
-    server was choosen because of latency.}
+    \caption{Request for the execution of a demanding function to be executed. The proxy will forward the request to the cloud because due to the high processing  power of the cloud server, the function will be executed more quickly. The nearest server was chosen because of latency.}
     \label{fig:succ-cloud-deploy}
   \end{center}
 \end{figure}
@@ -602,17 +583,13 @@ will opt for the one that is physically nearest (lower latency).
 \subsubsection{Forward function execution to the local network}
 \label{usecases:forward_local}
 
-Contrary to the previous case, the Figure \ref{fig:succ-local-deploy} portays a
-scenario where the requested serverless function is very light, being more
-beneficial to execute the function locally and avoid network latency. Despite the
-difference in power between the two environments, the previous metrics show that
+Contrary to the previous case, the Figure \ref{fig:succ-local-deploy} portrays a scenario where the requested serverless function is very light, being more beneficial to execute the function locally and avoid network latency. Despite the difference in power between the two environments, the previous metrics show that
 the local environment is capable of satisfying the request more quickly.
 
 \begin{figure}[ht]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{diss-succ-local-deploy.png}
-    \caption{Request for the execution of a simple, light function to be executed. The
-    proxy will forward the request to be run locally, as there is no benefit in
+    \caption{Request for the execution of a simple, light function to be executed. The proxy will forward the request to be run locally, as there is no benefit in
     executing the function on the cloud.}
     \label{fig:succ-local-deploy}
   \end{center}
@@ -634,8 +611,7 @@ of the system.
 \begin{figure}[ht]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{diss-fallback-local.png}
-    \caption{The request for the function execution to be in the cloud could not
-    be satified (e.g., no internet connection). The proxy will then forward the
+    \caption{The request for the function execution to be in the cloud could not be satisfied (e.g., no internet connection). The proxy will then forward the
 request for it to be executed in the local network.}
     \label{fig:fallback-local}
   \end{center}
@@ -654,7 +630,7 @@ function or as an argument of the request for the function execution.
 %a list of various runtime environments (the list must include the local network of
 %devices and one or more cloud servers), where to forward the request to execute a
 %serverless function. It will decide based on previous metrics of the time taken
-%for the function to execute in the different runtime environments, and will aim to
+%for the function to execute in the different runtime environments and will aim to
 %choose the one with less time taken. It is also possible for the runtime
 %environment to be manually configured in the request options or when setting up
 %the proxy. If it decides to forward the request to the local network, it will
@@ -682,7 +658,7 @@ In order to make the decision of which runtime environment to forward the functi
 to, there has to be some weighting process that will weight each of the runtime
 environments and compare them. This process will gather information about the
 different runtime environments and then make an accurate estimation of which one
-is the best choice (less time taken). This is similar to the Exploration vs
+is the best choice (less time took). This is similar to the Exploration vs
 Exploitation problem presented in \ref{sec:sota_mab}. Therefore, the following
 algorithms were implemented to handle the weighting process:
 
@@ -690,11 +666,9 @@ algorithms were implemented to handle the weighting process:
     \item \textbf{Greedy} - Has no exploration, simply assigns the weight as the
         mean average time taken.
     \item \textbf{UCB1} - Uses Hoeffding's Inequality to balance between
-        exploration and exploitation, but the cumulative regret will still be
-        considerable.
+        exploration and exploitation, but the cumulative regret will still be considerable.
     \item \textbf{Bayesian UCB} - Analyzes the reward distribution to make a very
-        accurate prediction of the weight but requires previous knowledge about the
-        environments.
+        accurate prediction of the weight but requires previous knowledge about the environments.
 \end{itemize}
 
 The developer or device can choose which of the weighting algorithms will be used
@@ -718,12 +692,7 @@ constituted of two main components, the \textbf{proxy} and the
         servers), and with the storage and retrieval of all metrics of previous
         function executions. 
     \item \textbf{sample\_functions} - The package that contains the serverless functions
-        whose execution is going to be requested to the proxy package. This
-        package is purelly a sample with the purpose of simulating and analyzing
-        resource demanding serverless functions (either light or heavy) and could be replaced
-        by any other set of functions. The functions inside this package can be
-        executed on either the local environment or on one of the servers (remote
-        environments).
+        whose execution is going to be requested to the proxy package. This package is purely a sample with the purpose of simulating and analyzing resource demanding serverless functions (either light or heavy) and could be replaced by any other set of functions. The functions inside this package can be executed on either the local environment or on one of the servers (remote environments).
 \end{itemize}
 
 \subsubsection*{proxy}
@@ -734,20 +703,18 @@ expect to receive the content as application/json.
 
 \begin{itemize}
     \item \textbf{proxy} - The main function through which all requests go through
-        first. After receiving the list of weights associated to the execution of
+        first. After receiving the list of weights associated with the execution of
         the requested function in each environment, it will choose the environment
         with the least weight and forward the execution of the serverless function
         to that runtime environment.
     \item \textbf{weight\_scale} - This function will analyze all the collected 
-        metrics of the requested function and assign a weight to each runtime
-        environment. It allows more than one algorithm for weight estimation.
+        metrics of the requested function and assign a weight to each runtime environment. It allows more than one algorithm for weight estimation.
     \item \textbf{get\_duration} - Retrieves the list of all the collected
         metrics of a function.
     \item \textbf{insert\_duration} - Store the time taken for a function to
         execute.
     \item \textbf{get\_overall\_stats} - Function that will return the summarized
-        records of all the collected metrics for each function in each
-        environment. Useful for analysis and evaluation of the results.
+        records of all the collected metrics for each function in each environment. Useful for analysis and evaluation of the results.
 \end{itemize}
 
 \begin{figure}[ht]
@@ -761,7 +728,7 @@ expect to receive the content as application/json.
 \subsubsection*{sample\_functions} \label{overview:sample_functions}
 
 The serverless functions in this package have the purpose of simulating real serverless
-functions with different purposes and execution times. The functions are aware of
+functions for different purposes and execution times. The functions are aware of
 the runtime environment they are being executed on and it is possible for them the answer
 differently according to this. Here, the different time taken is simulated using a
 \textit{wait} and using different values for different runtime environments.
@@ -772,18 +739,10 @@ differently according to this. Here, the different time taken is simulated using
         no difference between executing the function locally or in the cloud,
         other than connection latency.
     \item \textbf{func\_heavy} - In this function there is a \textit{wait} of 2 seconds if
-        it is executed locally or a \textit{wait} of 1 second
-        if it is executed on the cloud. There should be no difference in the time
-        taken across different cloud servers other than connection latency.
-    \item \textbf{func\_super\_heavy} - similar to \textit{func\_heavy} but here the
-        difference in time is bigger. There is a \textit{wait} of 4 seconds if the
-        function is executed locally or a \textit{wait} of 2 seconds if the
-        function is executed in the cloud.
+        it is executed locally or a \textit{wait} of 1 second if it is executed on the cloud. There should be no difference in the time taken across different cloud servers other than connection latency.
+    \item \textbf{func\_super\_heavy} - similar to \textit{func\_heavy} but here the difference in time is bigger. There is a \textit{wait} of 4 seconds if the function is executed locally or a \textit{wait} of 2 seconds if the function is executed in the cloud.
     \item \textbf{func\_obese\_heavy} - This is a function that, due to its nature, it can
-        only be executed in the cloud and its execution has been flagged as
-        cloud-only. The proxy will not even try to run the function locally, it
-        will always forward the request to the cloud. Because of this, there is no
-        fallback to run locally.
+        only be executed in the cloud and its execution has been flagged as cloud-only. The proxy will not even try to run the function locally, it will always forward the request to the cloud. Because of this, there is no fallback to run locally.
 \end{itemize}
 
 
@@ -795,17 +754,16 @@ For this experiment both cloud servers were up and running and it were perfomed
 99 iterations of requests. In each iteration was requested for every single one
 of the serverless functions in \textit{sample\_functions} (see
 \ref{overview:sample_functions} and \ref{impl:sample_functions}) to be executed.
-The system has no knowledge about the environment. The aim here is to identify
+The system has no knowledge of the environment. The aim here is to identify
 that it is accomplishing the mentioned use cases \ref{usecases:forward_cloud},
 \ref{usecases:forward_local}, and \ref{usecases:manual_forward}
 
 
 It is expected that the proxy will forward requests for \textit{func\_light} to be
 executed locally, for \textit{func\_heavy} requests to be executed either locally
-or in the cloud. It will depende on the impact of the connection latency, but
+or in the cloud. It will depend on the impact of the connection latency, but
 generally, the connection latency should be less than 1 second (difference in time
-that takes for the function to execute locally and remotely), which means that the
-expected result is for proxy to choose to forward to one of the cloud servers.
+that takes for the function to execute locally and remotely), which means that the expected result is for the proxy to choose to forward to one of the cloud servers.
 \textit{func\_super\_heavy} is expected to be executed in the cloud most of the
 times, due to the big difference in time taken, and the function
 \textit{func\_obese\_heavy} should always be executed in the London server because
@@ -852,7 +810,7 @@ Also, as expected, \textit{func\_obese\_heavy} had a 100\% accuracy, thus matchi
 the expected outcome stated in use case \ref{usecases:manual_forward}.
 
 \subsection{Second Experiment: Without internet connection to the servers}
-For this experiment both servers were turned off and the internet connection was
+For this experiment, both servers were turned off and the internet connection was
 cut, leaving the system only operational locally. The system still keeps all the
 knowledge acquired in the previous experiment.
 The aim here is to identify that it is accomplishing the use case
@@ -862,18 +820,17 @@ In this experiment, it is expected for the weighting algorithm to suggest
 executing the serverless function in one of the cloud servers, because it will
 lead to a faster execution. Because there is no internet connection, it is
 expected for the proxy to try to execute the function remotely, fail, and then to
-fallback to the local runtime environment. In the end, the function should be
+fall back to the local runtime environment. In the end, the function should be
 executed in the local runtime environment leading to the request being answered
 successfully.
 
 \subsubsection{Results}
-First the function \textit{weight\_scale} is queried to know which of the runtime
-environments the proxy is going to choose (because the proxy chooses the runtime
-environment with less weight, knowing the weights allow us to know which option
+First, the function \textit{weight\_scale} is queried to know which of the runtime
+environments the proxy is going to choose (because the proxy chooses the runtime environment with less weight, knowing the weights allow us to know which option
 the proxy is going to take). Because there is more information about the system,
-the weight algorithm used was the Bayesian UCB. As it can be seen in the Listing
+the weighting algorithm used was the Bayesian UCB. As it can be seen in the Listing
 \ref{listing:exp_weight_query}, the runtime environment that is going to be
-choosen is the Frankfurt's server.
+chosen is the Frankfurt's server.
 
 \begin{listing}
 \begin{lstlisting}[language=json, basicstyle=\footnotesize]
@@ -889,8 +846,8 @@ choosen is the Frankfurt's server.
 \label{listing:exp_weight_query}
 \end{listing}
 
-Even though the choosen runtime environment was Frankfurt's server, because there
-was no internet connection it had to fallback to execute the function locally in
+Even though the chosen runtime environment was Frankfurt's server, because there
+was no internet connection it had to fall back to execute the function locally in
 order to complete the request successfully, as seen in Listing
 \ref{listing:exp_fallback_result}. The observed results match the ones expected
 and also the proxy proceeded as stated in use case \ref{usecases:fallback}.
@@ -900,8 +857,8 @@ and also the proxy proceeded as stated in use case \ref{usecases:fallback}.
 {
     "nodeInfo": "61e20a65b48e ",
     "swarm": "local",
-    "message": "I was able to achieve this result using
-    HEAVY calculations",
+    "message": "I was able to achieve this result 
+    using HEAVY calculations",
     "status": "The light is ON"
 }
 \end{lstlisting}
@@ -917,7 +874,7 @@ when setting up the proxy.}
 During this experiment, the main purpose is to run a cycle of requests and then
 turn off the Internet access in the middle of the cycle to observe how this will
 affect response times. It will be run 99 iterations of requests and in each
-iteration it will be requested the execution of \textit{func\_heavy}, After
+iteration, it will be requested the execution of \textit{func\_heavy}, After
 request number \textit{50}, the Internet connection will be cut off, leaving the
 system only operational locally. The system will keep all the knowledge gathered
 in the previous experiments. The aim here is to identify that it is accomplishing
@@ -954,7 +911,7 @@ gathered from this experiment can be found in \ref{ap1:3rd_exp_complete_results}
 \subsection{Fourth Experiment: Adapting to lag}
 \label{res:exp4}
 In this experiment, it is going to be executed a series of requests and after
-reaching to a while, the Internet connection is going to be purposedly slowed to
+reaching to a while, the Internet connection is going to be purposely slowed to
 see how the system reacts in situations of lag and slow connection. It will be run
 249 iterations of requests and in each iteration it will be requested the
 execution of \textit{func\_heavy}, After request number \textit{50}, the Internet
@@ -974,21 +931,21 @@ In the second phase, the Internet connection is slowed down and the execution of
 function remotely should take longer than the execution of the function locally.
 In this phase, the system is supposed to still converge to one of the cloud
 servers but gradually diminishing the frequency in which it chooses the cloud
-servers as the best option.
+serves as the best option.
 
-After this phase, the system will enter a third phase where the results gathered
-after the introduction of network lag outweight the results gathered in the first
+After this phase, the system will enter the third phase where the results gathered
+after the introduction of network lag outweigh the results gathered in the first
 phase. Here, the system should start to converge to the local network as the
 best option.
 
 
-\subsubsection{Results}
+\subsubsection{Final Remarks}
 
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{exp4_total_time_chart.png}
     \caption{Requests total time throughout the various iterations of the
-    fourth experiment }
+    fourth experiment.}
     \label{fig:exp4_total_time_chart}
   \end{center}
 \end{figure}
@@ -997,7 +954,7 @@ best option.
 The gathered results can be observed in Figure \ref{fig:exp4_total_time_chart}. As
 expected, the results for the first 50 iterations are the expected results in a
 standard situation. After the introduction of network lag, we start to observe
-spikes in the total time it takes for the function to be executed. This spikes
+spikes in the total time it takes for the function to be executed. These spikes
 refer to the execution of the function remotely. In the first 30/40 requests after
 the introduction of network lag (iterations 50 to 90), the frequency of requests
 that are executed remotely is still high. The frequency starts to diminish
@@ -1007,15 +964,12 @@ local network more frequently than the cloud servers.
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{exp4_avg_chart.png}
-    \caption{This figure ilustrates the cumulative average duration of
-        the request throughout the various iterations of the fourth experiment.
-        E.g., the value in iteration 50 (2.085604 seconds) is the average duration
-        of the first 50 requests.}
+    \caption{Cumulative average duration of the request throughout the various iterations of the fourth experiment. E.g., the value in iteration 50 (2.085604 seconds) is the average duration of the first 50 requests.}
     \label{fig:exp4_avg_chart}
   \end{center}
 \end{figure}
 
-Figure \ref{fig:exp4_avg_chart}, shows a different perpective of the results,
+Figure \ref{fig:exp4_avg_chart}, shows a different perspective of the results,
 showing the cumulative average duration of the requests throughout the experiment.
 It can be seen here that around iteration 175 the system changed course and
 started to converge to the local network as the best option. This marks the point
@@ -1050,84 +1004,68 @@ Despite the fact that the proposed solution already reaches a level that is very
 beneficial for most of the practical applications, further development must be
 made to reach a more compelling solution.
 
-Within the fields surrounding this work, there is lot of uncharted
-territory and unkown aspects. The choice between a serverless architecture and a
+Within the fields surrounding this work, there is a lot of uncharted
+territory and unknown aspects. The choice between a serverless architecture and a
 monolithic one is still not clear in all cases and adding these concepts and
 infusing it with IoT and Fog Computing is a very new area. Because of this, the
 principal contributions of this work were:
 
 \begin{itemize}
-    \item Inovative approach to the mix of IoT, fog computing and serverless. There
-        is not much work in this mix of fields and this approach is both inovative
+    \item Innovative approach to the mix of IoT, fog computing and serverless. There is not much work in this mix of fields and this approach is both innovative
         and unseen.
 
-    \item Enabling serverless both locally and remotely. The developer creating the
-        serverless functions no longer has to actively choose where to deploy the
-        functions to, it is possible to automate that process and still keep total
+    \item Enabling serverless both locally and remotely. The developer creating the serverless functions no longer has to actively choose where to deploy the functions, it is possible to automate that process and still keep total
         regret at a minimum.
 
-    \item The ability to run serverless functions locally even if the connection to
-        the server fails and improvement of fault-tolerance in systems.
+    \item The ability to run serverless functions locally even if the connection to the server fails and improvement of fault-tolerance in systems.
 
-    \item Gathering of existing knowledge, tools, and platforms suitable for
-        developing solutions in the areas of IoT, serverless and fog computing.
+    \item Gathering of existing knowledge, tools, and platforms suitable for developing solutions in the areas of IoT, serverless and fog computing.
 
-    \item Develpment of a functional prototype built on top of widelly used and
-        mature solutions that can serve as inspiration for future and better
-        solutions.
+    \item Development of a functional prototype built on top of widely used and mature solutions that can serve as inspiration for future and better solutions.
 \end{itemize}
 
-All the code and work made is openly available at \url{https://github.com/444Duarte/serverless-iot}
+All the code and work made is openly available at \url{https://github.com/444Duarte/serverless-iot} .
 
-\subsection{Main Dificulties}
-During development of this solution, some problems occurred that caused some distress and
-troubled the overall solution.
+% \subsection{Main Dificulties}
+% During development of this solution, some problems occurred that caused some distress and
+% troubled the overall solution.
 
-\begin{itemize}
-\item This fusion of different areas like IoT, fog computing and serverless is new
-    and there is no clear path or approach. The uncertainty in what path to follow
-    led to some mistakes and to a slower pace sometimes.
+% \begin{itemize}
+% \item This fusion of different areas like IoT, fog computing and serverless is new
+%     and there is no clear path or approach. The uncertainty in what path to follow
+%     led to some mistakes and to a slower pace sometimes.
 
-\item Not many, but some of the tools used to develop the functional prototype are
-    also recent and poorly documented wich made it harder to build the functional
-    prototype.
+% \item Not many, but some of the tools used to develop the functional prototype are
+%     also recent and poorly documented which made it harder to build the functional
+%     prototype.
 
-\item Adapting the exploration vs exploitation algorithms to our problem. The
-    algorithms aim to maximize and the purpose was to minimize the cost
+% \item Adapting the exploration vs exploitation algorithms to our problem. The
+%     algorithms aim to maximize and the purpose was to minimize the cost
 
-\item There were not enough resources to develop a proper local network of IoT
-    devices and to create a trully authenthic ecosystem that would better simulate
-    a real life environment.
+% \item There were not enough resources to develop a proper local network of IoT
+%     devices and to create a truly authentic ecosystem that would better simulate
+%     a real-life environment.
 
-\end{itemize}
+% \end{itemize}
 
 
 \subsection{Future Work}
-Despite the efforts made, there is still many improvements that could be made to
+Despite the efforts made, there are still many improvements that could be made to
 the developed work:
 
 \begin{itemize}
     \item Stateful - Introducing statefulness and consistency across serverless
-        different runtime environments is definetely a challenge but the end
-        result would be of utmost usefulness and importance.
-    \item Analyzis of other metrics other than time (e.g. energy consumption, CPU
-        cycles, memory usage, network usage) - The time taken is not the only
-        metric that is important when choosing where to execute a serverless
-        function. Analyzing the impact of other metrics would also be appliable
-        in other different contexts and is something to take into consideration.
-        A solution mixing different points of view that analyzed different metrics
-        to choose the overall best result is also a possibility that would be of
-        great use.
-    \item Static analysis to verify complexity of the function - A static analyzis
-        of the function could largely improve the exploration vs exploitation
-        problem, allowing the system to start with some knowledge about the
-        complexity of the function, diminishing the total regret.
-    \item Integrate metrics with Prometheus - This is a pratical quality of life
-        improvement and only regards the technical implementation but would
-        simplify the analyzis process.
-    \item Replace the functional prototype with a viable real life solution that
+        different runtime environments is definitely a challenge but the end result would be of utmost usefulness and importance.
+    \item Analysis of other metrics other than time (e.g. energy consumption, CPU
+        cycles, memory usage, network usage) - The time taken is not the only metric that is important when choosing where to execute a serverless function. Analyzing the impact of other metrics would also be applicable in other different contexts and is something to take into consideration.
+        A solution mixing different points of view that analyzed different metrics to choose the overall best result is also a possibility that would be of great use.
+    \item Static analysis to verify the complexity of the function - A static analysis
+        of the function could largely improve the exploration vs exploitation problem, allowing the system to start with some knowledge about the complexity of the function, diminishing the total regret.
+    \item Integrate metrics with Prometheus - This is a practical quality of life
+        improvement and only regards the technical implementation but would simplify the analysis process.
+    \item Replace the functional prototype with a viable real-life solution that
         could augment serverless development - A viable real solution would
-        certainly be appreciated would deeply impact the field and advance
+        certainly, be appreciated would deeply impact the field and advance
         both research in these areas but also the development of real applications
         that took advantage of these concepts and technologies.
 \end{itemize}
@@ -1166,20 +1104,20 @@ The authors would like to thank...
 % http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
 % The IEEEtran BibTeX style support page is at:
 % http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
+\bibliographystyle{IEEEtran}
 % argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
+\bibliography{IEEEabrv,refs}
 %
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\begin{thebibliography}{1}
+%\begin{thebibliography}{1}
 
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
 
-\end{thebibliography}
+%\end{thebibliography}
 
 
 

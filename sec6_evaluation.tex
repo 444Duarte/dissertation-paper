@@ -1,10 +1,27 @@
 \section{Experimentation and evaluation}
+\subsection{Environment}
+In this serie of experiments, the setup was configured with 3 runtimes environment.
+1 local virtual machine running all the functions with Lubuntu 16.04, 2 cores and
+1 Gb of RAM. There are also 2 cloud servers, one in London and other in Frankfurt,
+both  hosted in a EC2 instance in AWS
+\footnote{\url{https://aws.amazon.com/pt/ec2/instance-types/}}. They are both
+t2.micro, running Ubuntu 16.04, with 1 core and 1 Gb of RAM.
+
+\subsubsection*{Connection latency}
+\label{res:conn_latency}
+Both servers were pinged before the test to verify the connection latency. The
+experiment is being made in Porto, Portugal. Here are the results: 
+\begin{itemize}
+    \item London - 71.153ms
+    \item Frankfurt - 52.297ms
+\end{itemize}
+
 
 \subsection{First Experiment: With internet connection}
 For this experiment both cloud servers were up and running and it were perfomed
 99 iterations of requests. In each iteration was requested for every single one
 of the serverless functions in \textit{sample\_functions} (see
-\ref{overview:sample_functions} and \ref{impl:sample_functions}) to be executed.
+\ref{overview:sample_functions} ) to be executed.
 The system has no knowledge of the environment. The aim here is to identify
 that it is accomplishing the mentioned use cases \ref{usecases:forward_cloud},
 \ref{usecases:forward_local}, and \ref{usecases:manual_forward}
@@ -44,11 +61,11 @@ the one with less latency (despite being physically further).
 %\end{tabular}
 %\end{table}
 
-The obtained results, see Table \ref{tab:first_exp_results}, match the expected
-results. For \textit{func\_light}, the time taken was so small (less than 1/10 of
-a second) that proxy imediatly converged in the best option. The results for the
-execution of the function \textit{func\_light} translate the results expected for
-use case \ref{usecases:forward_local}.
+The obtained results matched the expected results. For \textit{func\_light}, the
+time taken was so small (less than 1/10 of a second) that proxy imediatly
+converged in the best option. The results for the execution of the function
+\textit{func\_light} translate the results expected for use case
+\ref{usecases:forward_local}.
 
 For \textit{func\_heavy} and \textit{func\_super\_heavy}, it kept a ratio of
 exploration vs exploitation of 3/7 and 5/6, respectively, but always choosing the
@@ -91,7 +108,6 @@ chosen is the Frankfurt's server.
     "frankfurtServer": 1.1756422708191938,
     "local": 2.090245031544607
 }
-
 \end{lstlisting}
 \caption{}
 \label{listing:exp_weight_query}
@@ -104,6 +120,7 @@ order to complete the request successfully, as seen in Listing
 and also the proxy proceeded as stated in use case \ref{usecases:fallback}.
 
 \begin{listing}
+
 \begin{lstlisting}[language=json, basicstyle=\footnotesize]
 {
     "nodeInfo": "61e20a65b48e ",
@@ -118,6 +135,7 @@ which is the swarm (runtime environment) where the function was executed.
 \textit{local}, is the name given to the local network of devices, as configured
 when setting up the proxy.}
 \label{listing:exp_fallback_result}
+
 \end{listing}
 
 
@@ -156,8 +174,7 @@ jumped to \textbf{4,253785939} seconds when the Internet connection was cut off.
 Despite having no internet connection, the system was still able to complete the
 request, just with an added delay. The added delay was due to the fact that it had
 to try to execute the function remotely and also because of the increased time it
-takes to execute the function locally (2 seconds). The complete list of results
-gathered from this experiment can be found in \ref{ap1:3rd_exp_complete_results}.
+takes to execute the function locally (2 seconds). 
 
 \subsection{Fourth Experiment: Adapting to lag}
 \label{res:exp4}

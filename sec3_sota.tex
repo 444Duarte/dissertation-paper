@@ -22,3 +22,97 @@ The Multi-Armed Bandit is a known problem that exemplifies the Exploration vs
 Exploitation dilemma. The problem places us with multiple slot machines, each with
 a different reward probability. Given the setting, the objective is to find
 \textit{the best strategy to achieve the highest long-term reward}\cite{kn:Weng2018}.
+
+
+The goal is to maximize the total reward, $\sum^T_{t=1}r_t$, or in other words,
+minimize the regret of not taking the optimal action in every step.
+
+The optimal reward probability $\theta^*$ of the optimal action $a^*$ is:
+\begin{displaymath}
+    \theta^* = Q(a^*) = \max_{a \in A}  Q(a) = \max_{1 \leq i \leq K} \theta_i
+\end{displaymath}
+
+
+\subsubsection{$\epsilon$-Greedy}
+This algorithm will choose the best known action most of the times but it will
+also explore randomly from time to time. The value of an action is given by \cite{kn:Weng2018}:
+
+\begin{displaymath}
+    \hat{Q}_t(a) = \frac{1}{N_t(a)} \sum_{\tau=1}^t r_\tau \mathds{1}[a_\tau=a]
+\end{displaymath}
+
+$\mathds{1}$ is a binary indicator function and $N_t(a)$ represents the total number of
+times that a given action as been selected, $N_t(a)= \sum_{\tau=1}^t
+\mathds{1}[a_\tau=a]$. 
+
+In this algorithm, we take the best known action most of the times, $\hat{a}^*_t
+= \arg \max_{a\in A}\hat{Q}(a)$, or , with a probability of $\epsilon$, we take a
+random action. The best known action will be taken with a probability of
+$1-\epsilon$.
+
+\subsubsection{Upper Confidence Bounds}
+Random exploration might not be the best option because it might lead to trying an
+action that was previously concluded as bad. One way of avoiding is is to give
+priority to options with a \textit{high degree of uncertainty}, actions for which
+there isn't a confident value estimation yet.
+
+Upper Confidence Bounds (UCB) will translate this potential into a value, the
+upper confidence bound of the reward value, $\hat{U}_t(a)$ \cite{kn:Weng2018}. The
+true will be below $Q(a) \leq \hat{Q}_t(a) + \hat{U}_t(a)$. $\hat{U}_t(a)$ will
+vary with the number of trials and a larger sample of trials will result in a
+smaller $\hat{U}_t(a)$. With the UCB algorithm the next action to take in the will be:
+
+\begin{displaymath}
+a_t^{UCB} = \arg\max_{a\in A}\hat{Q}(a) + \hat{U}(a)
+\end{displaymath}
+
+To estimate the upper confidence bound, if prior knowledge of how the distribution
+looks like can be discarded, then it is possible to apply \textit{"Hoeffding's
+Inequality"}, a theorem that can be applied to any bounded distribution \cite{kn:Silver}.
+
+%TODO 
+%\mytodo{explicar melhor o processo}
+
+Applying Hoeffding's Inequality to the rewards of the bandit will result in:
+
+\begin{displaymath}
+    U_t(a) = \sqrt{\frac{-\log p}{2N_t(a)}}
+\end{displaymath}
+
+\subsubsection*{UCB1}
+To ensure that the optimal action is taken as $t\rightarrow\infty$, $p$ can be
+reduced with each trial \cite{kn:Silver}.
+
+In UCB1 algorithm replaces $p=t^{-4}$ resulting in:
+
+\begin{displaymath}
+    U_t(a) = \sqrt{\frac{2\log t}{N_t(a)}}
+\end{displaymath}
+
+The resulting algorithm, UCB1, is as follows
+
+\begin{displaymath}
+a_t = \arg\max_{a\in A}Q(a) + U(a) = \arg\max_{a\in A}Q(a) + \sqrt{\frac{2\log t}{N_t(a)}}
+\end{displaymath}
+
+\subsubsection*{Bayesian UCB}
+\label{sota:bayesian_ucb}
+The previous method, UCB1, does not make any assumptions about the reward
+distribution $R$, only relying on Hoeffding's Inequality to make an estimation.
+Knowing the distribution would allow or better estimates.
+
+In the Bayesian UCB it is assumed that the reward distribution is Gaussian,
+$R_a(r) = N(r;\mu_a,\sigma_a^2)$. The action that will give the best result is the
+action that maximises standard deviation of $Q(a)$ \cite{kn:Silver}:
+
+\begin{displaymath}
+    a_t = \arg\max_{a\in A}\mu_a + \frac{c\sigma_a}{\sqrt{N(a)}}
+\end{displaymath}
+
+where the constant $c$ is an adjustable hyperparameter.
+
+Bayesian UCB relies on a considerable ammount of prior knowledge of the rewards
+and for it to be accurate \cite{kn:Silver}. Otherwise, it would be too
+straightforward.
+
+

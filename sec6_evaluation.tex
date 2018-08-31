@@ -21,9 +21,9 @@ experiment is being made in Porto, Portugal. Here are the results:
 For this experiment both cloud servers were up and running and it were perfomed
 99 iterations of requests. In each iteration was requested for every single one
 of the serverless functions in \textit{sample\_functions} (see
-\ref{overview:sample_functions} ) to be executed.
+section \ref{sec:proposed_solution} ) to be executed.
 The system has no knowledge of the environment. The aim here is to identify
-that it is accomplishing the mentioned use cases \ref{usecases:forward_cloud},
+that it is accomplishing the mentioned use cases presented in sections \ref{usecases:forward_cloud},
 \ref{usecases:forward_local}, and \ref{usecases:manual_forward}
 
 
@@ -64,25 +64,25 @@ the one with less latency (despite being physically further).
 The obtained results matched the expected results. For \textit{func\_light}, the
 time taken was so small (less than 1/10 of a second) that proxy imediatly
 converged in the best option. The results for the execution of the function
-\textit{func\_light} translate the results expected for use case
-\ref{usecases:forward_local}.
+\textit{func\_light} translate the results expected for the use case
+in section \ref{usecases:forward_local}.
 
 For \textit{func\_heavy} and \textit{func\_super\_heavy}, it kept a ratio of
 exploration vs exploitation of 3/7 and 5/6, respectively, but always choosing the
 fastest of the cloud servers. The exploration rate also increases with the
 duration of the execution, meaning that the proxy will look for better options the
 longer it takes for a function to execute. The results for these two functions
-correspond to the ones expected in use case \ref{usecases:forward_cloud}.
+correspond to the ones expected in the use case presented in section \ref{usecases:forward_cloud}.
 
 Also, as expected, \textit{func\_obese\_heavy} had a 100\% accuracy, thus matching
-the expected outcome stated in use case \ref{usecases:manual_forward}.
+the expected outcome stated in use case presented in section \ref{usecases:manual_forward}.
 
 \subsection{Second Experiment: Without internet connection to the servers}
 For this experiment, both servers were turned off and the internet connection was
 cut, leaving the system only operational locally. The system still keeps all the
 knowledge acquired in the previous experiment.
 The aim here is to identify that it is accomplishing the use case
-\ref{usecases:fallback}.
+in section \ref{usecases:fallback}.
 
 In this experiment, it is expected for the weighting algorithm to suggest
 executing the serverless function in one of the cloud servers, because it will
@@ -117,7 +117,7 @@ Even though the chosen runtime environment was Frankfurt's server, because there
 was no internet connection it had to fall back to execute the function locally in
 order to complete the request successfully, as seen in Listing
 \ref{listing:exp_fallback_result}. The observed results match the ones expected
-and also the proxy proceeded as stated in use case \ref{usecases:fallback}.
+and also the proxy proceeded as stated in the use case presented in section \ref{usecases:fallback}.
 
 \begin{lstlisting}[
     language=json,
@@ -145,7 +145,7 @@ iteration, it will be requested the execution of \textit{func\_heavy}, After
 request number \textit{50}, the Internet connection will be cut off, leaving the
 system only operational locally. The system will keep all the knowledge gathered
 in the previous experiments. The aim here is to identify that it is accomplishing
-the use case \ref{usecases:fallback} and how results vary throughout.
+the use case in section \ref{usecases:fallback} and how results vary throughout.
 
 In this experiment, it is expected for the weighting algorithm to suggest
 executing the serverless function in one of the cloud servers, because it will
@@ -184,7 +184,7 @@ execution of \textit{func\_heavy}, After request number \textit{50}, the Interne
 connection will be slowed down (\textbf{28 kbps UP, 14 kbps DOWN}) and the system
 will continue to be asked to execute the functions. The system will have none of
 the knowledge gathered in the previous experiments. The aim here is to identify
-that it is accomplishing the use cases \ref{usecases:forward_cloud} and
+that it is accomplishing the use cases in sections \ref{usecases:forward_cloud} and
 \ref{usecases:forward_local}, and also that it is capable of adapting to changes
 in the network.
 
